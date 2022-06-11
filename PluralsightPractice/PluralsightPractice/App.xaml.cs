@@ -9,7 +9,7 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new RelativeLayoutPage();
+         MainPage = new FlexLayoutPage();
       }
 
       protected override void OnStart()

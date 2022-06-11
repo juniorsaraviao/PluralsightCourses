@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PluralsightPractice.AbsoluteAndRelative.FlexLayoutPage">
+    <FlexLayout Direction="Column">
+
+        <Label Text="Header"
+               FontSize="Large"
+               BackgroundColor="Green"
+               HorizontalTextAlignment="Center" />
+
+        <FlexLayout FlexLayout.Grow="1">
+
+            <Label Text="Content"
+                   FontSize="Large"
+                   BackgroundColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FlexLayout.Grow="1"/>
+
+            <BoxView FlexLayout.Basis="50"
+                     FlexLayout.Order="-1"
+                     Color="Blue" />
+
+            <BoxView FlexLayout.Basis="50"
+                     Color="Red" />
+
+        </FlexLayout>
+
+        <Label Text="Footer"
+               FontSize="Large"
+               BackgroundColor="Yellow"
+               HorizontalTextAlignment="Center" />
+
+    </FlexLayout>
+</ContentPage>
