@@ -1,6 +1,5 @@
-﻿using System;
+﻿using PluralsightPractice.AbsoluteAndRelative;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PluralsightPractice
 {
@@ -10,7 +9,7 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new MainPage();
+         MainPage = new RelativeLayoutPage();
       }
 
       protected override void OnStart()
