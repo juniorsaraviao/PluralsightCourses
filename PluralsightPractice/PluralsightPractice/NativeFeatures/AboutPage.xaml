@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:nativefeatures="clr-namespace:PluralsightPractice.NativeFeatures"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="PluralsightPractice.NativeFeatures.AboutPage"
+             ios:Page.UseSafeArea="True">
+    
+    <ContentPage.BindingContext>
+        <nativefeatures:AboutViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label FontSize="22">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding AppName}" FontAttributes="Bold"/>
+                        <Span Text=" "/>
+                        <Span Text="{Binding AppVersion}" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button Command="{Binding OpenWebCommand}" Text="View course now!" BackgroundColor="LightBlue"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

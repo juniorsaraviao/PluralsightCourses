@@ -1,4 +1,5 @@
 ﻿using PluralsightPractice.AbsoluteAndRelative;
+using PluralsightPractice.NativeFeatures;
 using PluralsightPractice.Navigation;
 using Xamarin.Forms;
 
@@ -10,7 +11,7 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new NavigationPage(new ModalLandingPage());
+         MainPage = new NavigationPage(new PicturePage());
       }
 
       protected override void OnStart()
