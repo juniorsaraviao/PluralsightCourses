@@ -17,6 +17,14 @@ namespace PluralsightPractice.Navigation
          InitializeComponent();
       }
 
+      private static bool _showAnimation = true;
+
+      private static bool ToggleAnimation()
+      {
+         _showAnimation = !_showAnimation;
+         return _showAnimation;
+      }
+
       private async void Button_Clicked(object sender, EventArgs e)
       {
          var viewModel = this.BindingContext as LandingPageViewModel;
@@ -29,7 +37,7 @@ namespace PluralsightPractice.Navigation
          var secondPage = new SecondPage();
          ((SecondPageViewModel)secondPage.BindingContext).Text = viewModel.Text;
 
-         await Navigation.PushAsync(secondPage);
+         await Navigation.PushAsync(secondPage, ToggleAnimation());
       }
    }
 }
