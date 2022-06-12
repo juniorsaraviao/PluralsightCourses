@@ -14,7 +14,8 @@
     
     <ContentPage.Content>
             <Grid RowDefinitions="*,Auto,Auto,Auto,Auto">
-                <BoxView Grid.Row="0" Color="{DynamicResource BoxColor}"/>
+                <BoxView Grid.Row="0" Color="{DynamicResource BoxColor}" Opacity="{Binding BoxOpacity}"
+                         Margin="{OnPlatform iOS=10, Android=30, Default=20}"/>
                 <Image Grid.Row="0" Source="{Binding ImageData}" Margin="10"/>
                 <Button Grid.Row="1" Text="{Binding ButtonLabel}" Command="{Binding PickPhotoCommand}"/>
                 <Button Grid.Row="2" Text="Share Picture" Command="{Binding ShareCommand}"/>

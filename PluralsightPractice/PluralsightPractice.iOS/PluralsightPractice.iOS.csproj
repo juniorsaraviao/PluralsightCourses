@@ -133,4 +133,13 @@
       <Name>PluralsightPractice</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoi%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoi%403x.png" />
+  </ItemGroup>
 </Project>

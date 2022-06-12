@@ -12,12 +12,15 @@
     
     <ContentPage.Content>
         <StackLayout>
+            <Image Source="{StaticResource LogoImage}" Aspect="AspectFit"/>
             <Label FontSize="22">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="{Binding AppName}" FontAttributes="Bold"/>
                         <Span Text=" "/>
                         <Span Text="{Binding AppVersion}" FontAttributes="Bold"/>
+                        <Span Text=" "/>
+                        <Span Text="{Binding Platform}" FontAttributes="Bold"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>

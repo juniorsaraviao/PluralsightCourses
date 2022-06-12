@@ -12,6 +12,28 @@ namespace PluralsightPractice.NativeFeatures
    {
       public string AppName => AppInfo.Name;
       public string AppVersion => AppInfo.VersionString;
+      
+      public string Platform
+      {
+         get
+         {
+            switch (Device.RuntimePlatform)
+            {
+               case Device.iOS:
+                  if (Device.Idiom == TargetIdiom.Tablet)
+                  {
+                     return "iPad";
+                  }
+                  else
+                  {
+                     return "iPhone";
+                  }
+               default:
+                  return Device.RuntimePlatform;
+            }
+         }
+      }
+
       public ICommand OpenWebCommand { get; }
 
       public AboutViewModel()
