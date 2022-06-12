@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PluralsightPractice.App">
     <Application.Resources>
-
+        <Color x:Key="BoxColor">#486B9C</Color>
     </Application.Resources>
 </Application>

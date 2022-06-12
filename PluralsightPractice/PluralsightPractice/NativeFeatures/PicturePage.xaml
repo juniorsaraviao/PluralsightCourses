@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PluralsightPractice.NativeFeatures.PicturePage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:nativefeatures="clr-namespace:PluralsightPractice.NativeFeatures"
+             ios:Page.UseSafeArea="True"
+             Title="{Binding Title}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <nativefeatures:PictureViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,Auto,Auto,Auto">
+            <BoxView Grid.Row="0" Color="{DynamicResource BoxColor}"/>
+            <Image Grid.Row="0" Source="{Binding ImageData}" Margin="10"/>
+            <Button Grid.Row="1" Text="{Binding ButtonLabel}" Command="{Binding PickPhotoCommand}"/>
+            <Button Grid.Row="2" Text="Share Picture" Command="{Binding ShareCommand}"/>
+            <Button Grid.Row="3" Text="Fix in Settings" IsVisible="{Binding ShowFixSettings}" Command="{Binding SettingsCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
