@@ -19,7 +19,17 @@ namespace PluralsightPractice.Navigation
 
       private async void Button_Clicked(object sender, EventArgs e)
       {
-         await Navigation.PushAsync(new SecondPage());
+         var viewModel = this.BindingContext as LandingPageViewModel;
+
+         if (viewModel == null)
+         {
+            return;
+         }
+
+         var secondPage = new SecondPage();
+         ((SecondPageViewModel)secondPage.BindingContext).Text = viewModel.Text;
+
+         await Navigation.PushAsync(secondPage);
       }
    }
 }
