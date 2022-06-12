@@ -10,7 +10,7 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new NavigationPage(new LandingPage());
+         MainPage = new NavigationPage(new ModalLandingPage());
       }
 
       protected override void OnStart()
