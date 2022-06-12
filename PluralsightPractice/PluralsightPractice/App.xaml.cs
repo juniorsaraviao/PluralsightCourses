@@ -1,4 +1,5 @@
 ﻿using PluralsightPractice.AbsoluteAndRelative;
+using PluralsightPractice.Navigation;
 using Xamarin.Forms;
 
 namespace PluralsightPractice
@@ -9,7 +10,7 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new FlexLayoutPage();
+         MainPage = new NavigationPage(new LandingPage());
       }
 
       protected override void OnStart()
