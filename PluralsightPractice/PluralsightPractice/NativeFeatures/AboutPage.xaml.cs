@@ -16,5 +16,17 @@ namespace PluralsightPractice.NativeFeatures
       {
          InitializeComponent();
       }
+
+      protected override void OnAppearing()
+      {
+         base.OnAppearing();
+         MessagingCenter.Subscribe<AboutViewModel>(this, "HideKeyboard", (sender) =>
+         {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+               DependencyService.Get<IKeyboardHelper>()?.HideKeyboard();
+            });
+         });
+      }
    }
 }

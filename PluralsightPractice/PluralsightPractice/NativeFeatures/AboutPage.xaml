@@ -25,6 +25,8 @@
                 </Label.FormattedText>
             </Label>
             <Button Command="{Binding OpenWebCommand}" Text="View course now!" BackgroundColor="LightBlue"/>
+            <Label Text="{Binding CountDownLabel}"/>
+            <Entry Placeholder="Type something here to trigger the timer" Text="{Binding CountDownText}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
