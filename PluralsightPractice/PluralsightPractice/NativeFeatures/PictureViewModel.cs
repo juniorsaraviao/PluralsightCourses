@@ -1,5 +1,6 @@
 ﻿using PluralsightPractice.Navigation;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -8,6 +9,8 @@ namespace PluralsightPractice.NativeFeatures
 {
    public class PictureViewModel : BaseViewModel
    {
+      private static readonly byte[] PnhHeader = new byte[] { 137, 80, 78, 71, 13, 10, 26, 10 };
+      private byte[] cachedImage = null;
       public Command PickPhotoCommand { get; set; }
       public Command ShareCommand { get; set; }
       public Command SettingsCommand { get; set; }
@@ -104,12 +107,53 @@ namespace PluralsightPractice.NativeFeatures
          else
          {
             ShowFixSettings = false;
+
+            var sharedPhoto = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
+
+            if (sharedPhoto != null)
+            {
+               BoxOpacity = 0;
+
+               var stream = new MemoryStream();
+               sharedPhoto.ImageData.CopyTo(stream);
+               cachedImage = stream.ToArray();
+
+               ImageData = ImageSource.FromStream(() => new MemoryStream(cachedImage));
+
+               ButtonLabel = "Pick another picture";
+               _enableShareButton = true;
+               ShareCommand.ChangeCanExecute();
+            }
          }
       }
 
-      Task SharePhoto()
+      bool IsPng()
       {
-         throw new NotImplementedException();
+         bool result;
+         int i = 0;
+         do
+         {
+            result = cachedImage[i] == PnhHeader[i];
+         } while (result && ++i < 8);
+
+         return result;
+      }
+
+      async Task SharePhoto()
+      {
+         var fn = IsPng() ? "attachment.png" : "attachment.jpg";
+         var shareFileName = Path.Combine(FileSystem.CacheDirectory, fn);
+
+         File.WriteAllBytes(shareFileName, cachedImage);
+
+         await Share.RequestAsync(new ShareFileRequest
+         {
+            Title = "Shared from me",
+            File = new ShareFile(shareFileName),
+            PresentationSourceBounds = DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Idiom == DeviceIdiom.Tablet
+               ? new System.Drawing.Rectangle(0, 20, 0, 0)
+               : System.Drawing.Rectangle.Empty
+         });
       }
    }
 }
