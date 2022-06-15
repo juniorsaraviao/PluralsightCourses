@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.Extensions.DependencyInjection;
+using PluralsightPractice.NativeFeatures;
 using UIKit;
 
 namespace PluralsightPractice.iOS
@@ -25,7 +27,16 @@ namespace PluralsightPractice.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            Startup.Init(ConfigureServices);   
+
             return base.FinishedLaunching(app, options);
+        }
+       
+        void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<IToastMessage, ToastMessage>();
+            services.AddTransient<IKeyboardHelper, KeyboardHelper>();
+            services.AddTransient<IPhotoPickerService, PhotoPickerService>();
         }
     }
 }

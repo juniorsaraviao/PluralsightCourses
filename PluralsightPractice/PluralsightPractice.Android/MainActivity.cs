@@ -6,6 +6,7 @@ using Plugin.CurrentActivity;
 using System.Threading.Tasks;
 using PluralsightPractice.NativeFeatures;
 using Android.Content;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PluralsightPractice.Droid
 {
@@ -25,8 +26,19 @@ namespace PluralsightPractice.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            Startup.Init(ConfigureServices);
+            
             LoadApplication(new App());
         }
+
+        void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTransient<IToastMessage, ToastMessage>();
+            services.AddTransient<IKeyboardHelper, KeyboardHelper>();
+            services.AddTransient<IPhotoPickerService, PhotoPickerService>();
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

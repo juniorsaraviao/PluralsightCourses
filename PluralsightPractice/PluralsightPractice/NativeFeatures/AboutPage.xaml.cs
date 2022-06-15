@@ -24,7 +24,9 @@ namespace PluralsightPractice.NativeFeatures
          {
             Device.BeginInvokeOnMainThread(() =>
             {
-               DependencyService.Get<IKeyboardHelper>()?.HideKeyboard();
+               App.ServiceProvider.GetService<IKeyboardHelper>()?.HideKeyboard();
+
+               App.ServiceProvider.GetService<IToastMessage>()?.OpenToast("Goodbye keyboard!");
             });
          });
       }
