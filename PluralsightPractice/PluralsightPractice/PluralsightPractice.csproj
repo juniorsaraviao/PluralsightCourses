@@ -25,8 +25,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\PluralsightPractice.Common\PluralsightPractice.Common.csproj" />
+    <ProjectReference Include="..\..\PluralsightPractice.Dal\PluralsightPractice.Dal.csproj" />
+    <ProjectReference Include="..\..\PluralsightPractice.Services\PluralsightPractice.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="AbsoluteAndRelative\AbsoluteLayoutPage.xaml.cs">
       <DependentUpon>AbsoluteLayoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Architecting\AboutPage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 

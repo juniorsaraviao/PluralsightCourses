@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:viewmodel="clr-namespace:PluralsightPractice.Architecting.ViewModel"
+             x:Class="PluralsightPractice.Architecting.AboutPage"
+             ios:Page.UseSafeArea="True"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <viewmodel:AboutViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{StaticResource LogoImage}" Aspect="AspectFit"/>
+            <Label FontSize="22">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding AppName}" FontAttributes="Bold"/>
+                        <Span Text=" "/>
+                        <Span Text="{Binding AppVersion}" FontAttributes="Bold"/>
+                        <Span Text=" "/>
+                        <Span Text="{Binding Platform}" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button Command="{Binding OpenWebCommand}" Text="View course now!" BackgroundColor="LightBlue"/>
+            <Label Text="{Binding CountDownLabel}"/>
+            <Entry Placeholder="Type something here to trigger the timer" Text="{Binding CountDownText}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
