@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.Android
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.iOS", "PluralsightPractice\PluralsightPractice.iOS\PluralsightPractice.iOS.csproj", "{E4FA854A-1223-4591-B452-8AF97FC1274F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice", "PluralsightPractice\PluralsightPractice\PluralsightPractice.csproj", "{043B4DBD-14BD-4221-B7F8-521327401FD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluralsightPractice", "PluralsightPractice\PluralsightPractice\PluralsightPractice.csproj", "{043B4DBD-14BD-4221-B7F8-521327401FD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{F42B5C8A-C30D-4417-AC93-264B2A2855DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{6437A13C-3AF5-46E7-9F49-084026D0BA94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +80,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DD7EFCB-78D0-4212-8E04-B775B243CBD9} = {F42B5C8A-C30D-4417-AC93-264B2A2855DC}
+		{E4FA854A-1223-4591-B452-8AF97FC1274F} = {6437A13C-3AF5-46E7-9F49-084026D0BA94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D5AF2EE-5A24-4776-B1A5-46CA4F12DD48}

@@ -1,4 +1,5 @@
 ﻿using PluralsightPractice.AbsoluteAndRelative;
+using PluralsightPractice.Architecting;
 using PluralsightPractice.NativeFeatures;
 using PluralsightPractice.Navigation;
 using System;
@@ -14,7 +15,8 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
-         MainPage = new NavigationPage(new PicturePage());
+         //MainPage = new NavigationPage(new PicturePage());
+         MainPage = new ArchFlyoutPage();
       }
 
       protected override void OnStart()
