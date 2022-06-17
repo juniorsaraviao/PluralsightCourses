@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace PluralsightPractice.Dal
 {
    // DAL = Data Access Layer
-   public class CustomerDal
+   public class CustomerDal : ICustomerDal
    {
       public async Task<Customer> GetCustomerById(string customerId)
       {

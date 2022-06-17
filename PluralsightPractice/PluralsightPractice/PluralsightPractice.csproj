@@ -26,8 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\PluralsightPractice.Common\PluralsightPractice.Common.csproj" />
-    <ProjectReference Include="..\..\PluralsightPractice.Dal\PluralsightPractice.Dal.csproj" />
-    <ProjectReference Include="..\..\PluralsightPractice.Services\PluralsightPractice.Services.csproj" />
+    <ProjectReference Include="..\..\PluralsightPractice.Dependency\PluralsightPractice.Dependency.csproj" />
   </ItemGroup>
 
   <ItemGroup>

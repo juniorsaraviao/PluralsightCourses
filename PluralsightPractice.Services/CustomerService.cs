@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace PluralsightPractice.Services
 {
-   public class CustomerService
+   public class CustomerService : ICustomerService
    {
       public async Task<Customer> GetCustomerById(string customerId)
       {
-         return new Customer 
+         return new Customer
          {
             FirstName = customerId
          };

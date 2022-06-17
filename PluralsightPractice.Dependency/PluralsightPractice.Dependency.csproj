@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluralsightPractice.Common\PluralsightPractice.Common.csproj" />
+    <ProjectReference Include="..\PluralsightPractice.Dal\PluralsightPractice.Dal.csproj" />
+    <ProjectReference Include="..\PluralsightPractice.Services\PluralsightPractice.Services.csproj" />
+  </ItemGroup>
+
+</Project>

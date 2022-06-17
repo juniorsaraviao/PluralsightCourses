@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{F42B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{6437A13C-3AF5-46E7-9F49-084026D0BA94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.Common", "PluralsightPractice.Common\PluralsightPractice.Common.csproj", "{69EEF5F5-8464-4354-A5A5-0C8F7A206F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluralsightPractice.Common", "PluralsightPractice.Common\PluralsightPractice.Common.csproj", "{69EEF5F5-8464-4354-A5A5-0C8F7A206F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.Dal", "PluralsightPractice.Dal\PluralsightPractice.Dal.csproj", "{032D6CE3-41BF-41BF-9C89-1077233E6450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluralsightPractice.Dal", "PluralsightPractice.Dal\PluralsightPractice.Dal.csproj", "{032D6CE3-41BF-41BF-9C89-1077233E6450}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.Services", "PluralsightPractice.Services\PluralsightPractice.Services.csproj", "{CC8C4B2A-64AC-4C5B-95CD-EB650050C9BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluralsightPractice.Services", "PluralsightPractice.Services\PluralsightPractice.Services.csproj", "{CC8C4B2A-64AC-4C5B-95CD-EB650050C9BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralsightPractice.Dependency", "PluralsightPractice.Dependency\PluralsightPractice.Dependency.csproj", "{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +121,18 @@ Global
 		{CC8C4B2A-64AC-4C5B-95CD-EB650050C9BB}.Release|iPhone.Build.0 = Release|Any CPU
 		{CC8C4B2A-64AC-4C5B-95CD-EB650050C9BB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{CC8C4B2A-64AC-4C5B-95CD-EB650050C9BB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|iPhone.Build.0 = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B75CBDDA-A3EA-4BDF-85F4-4E9DD401FCEB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
