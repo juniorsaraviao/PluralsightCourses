@@ -16,8 +16,13 @@ namespace PluralsightPractice
          InitializeComponent();
 
          //MainPage = new NavigationPage(new PicturePage());
+         //ViewModelLocator.Register<Architecting.ViewModel.AboutViewModel>();
          MainPage = new ArchFlyoutPage();
       }
+
+      public void Register<TInterface, TImplementation>()
+         where TImplementation : class, TInterface
+         where TInterface : class => ViewModelLocator.Register<TInterface, TImplementation>();
 
       protected override void OnStart()
       {

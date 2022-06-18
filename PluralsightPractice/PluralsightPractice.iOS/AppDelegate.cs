@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using Microsoft.Extensions.DependencyInjection;
+using PluralsightPractice.Common;
 using PluralsightPractice.NativeFeatures;
 using UIKit;
 
@@ -25,7 +26,10 @@ namespace PluralsightPractice.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            var application = new App();
+            application.Register<IPlatformPrinter, PlatformPrinter>();
+            LoadApplication(application);
 
             Startup.Init(ConfigureServices);   
 

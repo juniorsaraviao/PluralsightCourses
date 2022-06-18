@@ -67,6 +67,7 @@
     <Compile Include="KeyboardHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PhotoPickerService.cs" />
+    <Compile Include="PlatformPrinter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToastMessage.cs" />
@@ -94,6 +95,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\PluralsightPractice.Common\PluralsightPractice.Common.csproj">
+      <Project>{69EEF5F5-8464-4354-A5A5-0C8F7A206F92}</Project>
+      <Name>PluralsightPractice.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PluralsightPractice\PluralsightPractice.csproj">
       <Project>{DDA1AC4D-AE73-4438-BA64-A71A7E88F901}</Project>
       <Name>PluralsightPractice</Name>

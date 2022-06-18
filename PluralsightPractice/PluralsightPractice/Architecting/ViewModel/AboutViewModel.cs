@@ -98,6 +98,7 @@ namespace PluralsightPractice.Architecting.ViewModel
       {
          var newTitle = await _customerService.GetCustomerById("user");
          Title = newTitle.FirstName;
+         //Title = DependencyService.Get<IPlatformPrinter>().GetPlatformString();
       }
    }
 }

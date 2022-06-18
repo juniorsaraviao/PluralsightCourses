@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using PluralsightPractice.NativeFeatures;
 using Android.Content;
 using Microsoft.Extensions.DependencyInjection;
+using PluralsightPractice.Common;
 
 namespace PluralsightPractice.Droid
 {
@@ -27,9 +28,12 @@ namespace PluralsightPractice.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            Startup.Init(ConfigureServices);
-            
-            LoadApplication(new App());
+            var app = new App();
+            app.Register<IPlatformPrinter, PlatformPrinter>();
+
+            //Startup.Init(ConfigureServices);            
+
+            LoadApplication(app);
         }
 
         void ConfigureServices(IServiceCollection services)
