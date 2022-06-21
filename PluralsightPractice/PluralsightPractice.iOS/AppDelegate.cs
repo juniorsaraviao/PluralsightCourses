@@ -27,9 +27,8 @@ namespace PluralsightPractice.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            var application = new App();
-            application.Register<IPlatformPrinter, PlatformPrinter>();
-            LoadApplication(application);
+            App.Register<IPlatformPrinter, PlatformPrinter>();
+            LoadApplication(new App());
 
             Startup.Init(ConfigureServices);   
 

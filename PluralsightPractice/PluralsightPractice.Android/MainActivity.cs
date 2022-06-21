@@ -27,13 +27,9 @@ namespace PluralsightPractice.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
-            var app = new App();
-            app.Register<IPlatformPrinter, PlatformPrinter>();
-
-            //Startup.Init(ConfigureServices);            
-
-            LoadApplication(app);
+            
+            App.Register<IPlatformPrinter, PlatformPrinter>();
+            LoadApplication(new App());
         }
 
         void ConfigureServices(IServiceCollection services)

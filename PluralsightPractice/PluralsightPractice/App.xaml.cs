@@ -20,7 +20,7 @@ namespace PluralsightPractice
          MainPage = new ArchFlyoutPage();
       }
 
-      public void Register<TInterface, TImplementation>()
+      public static void Register<TInterface, TImplementation>()
          where TImplementation : class, TInterface
          where TInterface : class => ViewModelLocator.Register<TInterface, TImplementation>();
 
