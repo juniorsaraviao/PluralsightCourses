@@ -33,7 +33,7 @@ namespace PluralsightPractice.Architecting
          {
             MenuItems = new ObservableCollection<ArchFlyoutPageFlyoutMenuItem>(new[]
             {
-                    new ArchFlyoutPageFlyoutMenuItem { Id = 0, Title = "Page 1" },
+                    new ArchFlyoutPageFlyoutMenuItem { Id = 0, Title = "Page 1", TargetType = typeof(ShowWebPage) },
                     new ArchFlyoutPageFlyoutMenuItem { Id = 1, Title = "Page 2" },
                     new ArchFlyoutPageFlyoutMenuItem { Id = 2, Title = "Page 3" },
                     new ArchFlyoutPageFlyoutMenuItem { Id = 3, Title = "Page 4" },
