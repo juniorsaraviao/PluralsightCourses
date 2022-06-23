@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -75,5 +76,14 @@
     <EmbeddedResource Update="Navigation\SecondPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Localization\Helpers\" />
+    <Folder Include="Localization\MultilingualResources\" />
+    <Folder Include="Localization\Views\" />
+    <Folder Include="Localization\ViewModels\" />
+    <Folder Include="Localization\Services\" />
+    <Folder Include="Localization\Resources\" />
   </ItemGroup>
 </Project>
