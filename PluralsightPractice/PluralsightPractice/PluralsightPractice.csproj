@@ -1,35 +1,63 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <ItemGroup>
     <None Remove="Icons\materialdesignicons-webfont.ttf" />
+    <None Remove="Localization\MultilingualResources\CurList.es.xlf" />
+    <None Remove="Localization\MultilingualResources\CurList.pt-BR.xlf" />
+    <None Remove="Localization\MultilingualResources\CurList.pt-PT.xlf" />
+    <None Remove="Localization\MultilingualResources\CurList.zh-Hans.xlf" />
+    <None Remove="Localization\MultilingualResources\CurList.zh-Hant.xlf" />
+    <None Remove="Localization\Services\currencies-de.json" />
+    <None Remove="Localization\Services\currencies-es.json" />
+    <None Remove="Localization\Services\currencies-pt-br.json" />
+    <None Remove="Localization\Services\currencies-pt-pt.json" />
+    <None Remove="Localization\Services\currencies-zh-cn.json" />
+    <None Remove="Localization\Services\currencies-zh-tw.json" />
+    <None Remove="Localization\Services\currencies.json" />
+    <None Remove="Localization\Services\currencysymbols.json" />
+    <None Remove="Localization\Services\exchange.json" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Icons\materialdesignicons-webfont.ttf" />
+    <EmbeddedResource Include="Localization\Services\currencies-de.json" />
+    <EmbeddedResource Include="Localization\Services\currencies-es.json" />
+    <EmbeddedResource Include="Localization\Services\currencies-pt-br.json" />
+    <EmbeddedResource Include="Localization\Services\currencies-pt-pt.json" />
+    <EmbeddedResource Include="Localization\Services\currencies-zh-cn.json" />
+    <EmbeddedResource Include="Localization\Services\currencies-zh-tw.json" />
+    <EmbeddedResource Include="Localization\Services\currencies.json" />
+    <EmbeddedResource Include="Localization\Services\currencysymbols.json" />
+    <EmbeddedResource Include="Localization\Services\exchange.json" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\PluralsightPractice.Common\PluralsightPractice.Common.csproj" />
     <ProjectReference Include="..\..\PluralsightPractice.Dependency\PluralsightPractice.Dependency.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="AbsoluteAndRelative\AbsoluteLayoutPage.xaml.cs">
       <DependentUpon>AbsoluteLayoutPage.xaml</DependentUpon>
@@ -37,8 +65,12 @@
     <Compile Update="Architecting\AboutPage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Localization\Resources\AppResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="AbsoluteAndRelative\AbsoluteLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -61,6 +93,10 @@
     <EmbeddedResource Update="Architecting\ShowWebPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Resources\AppResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="NativeFeatures\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -77,13 +113,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Localization\Helpers\" />
-    <Folder Include="Localization\MultilingualResources\" />
     <Folder Include="Localization\Views\" />
-    <Folder Include="Localization\ViewModels\" />
-    <Folder Include="Localization\Services\" />
-    <Folder Include="Localization\Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="Localization\MultilingualResources\CurList.es.xlf" />
+    <XliffResource Include="Localization\MultilingualResources\CurList.pt-BR.xlf" />
+    <XliffResource Include="Localization\MultilingualResources\CurList.pt-PT.xlf" />
+    <XliffResource Include="Localization\MultilingualResources\CurList.zh-Hans.xlf" />
+    <XliffResource Include="Localization\MultilingualResources\CurList.zh-Hant.xlf" />
   </ItemGroup>
 </Project>
