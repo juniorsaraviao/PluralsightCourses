@@ -1,5 +1,6 @@
 ﻿using PluralsightPractice.AbsoluteAndRelative;
 using PluralsightPractice.Architecting;
+using PluralsightPractice.Localization.Views;
 using PluralsightPractice.NativeFeatures;
 using PluralsightPractice.Navigation;
 using System;
@@ -15,17 +16,29 @@ namespace PluralsightPractice
       {
          InitializeComponent();
 
+         //ChangeCulture("es-ES");
+
          //MainPage = new NavigationPage(new PicturePage());
          //ViewModelLocator.Register<Architecting.ViewModel.AboutViewModel>();
-         MainPage = new ArchFlyoutPage();
+         MainPage = new CurView();
       }
 
       public static void Register<TInterface, TImplementation>()
          where TImplementation : class, TInterface
          where TInterface : class => ViewModelLocator.Register<TInterface, TImplementation>();
 
-      protected override void OnStart()
+      private void ChangeCulture(string locale)
       {
+         System.Threading.Thread.CurrentThread.CurrentCulture =
+             new System.Globalization.CultureInfo(locale);
+
+         System.Threading.Thread.CurrentThread.CurrentUICulture =
+             System.Threading.Thread.CurrentThread.CurrentCulture;
+      }
+
+      protected async override void OnStart()
+      {
+         await ((CurView)MainPage).RefreshData();
       }
 
       protected override void OnSleep()

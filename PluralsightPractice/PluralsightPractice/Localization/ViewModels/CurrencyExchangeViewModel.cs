@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace PluralsightPractice.Localization.ViewModels
 {
-   class CurrencyExchangeViewModel : INotifyPropertyChanged
+   public class CurrencyExchangeViewModel : INotifyPropertyChanged
    {
       public event PropertyChangedEventHandler PropertyChanged;
 

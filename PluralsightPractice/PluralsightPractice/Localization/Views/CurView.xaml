@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PluralsightPractice.Localization.Views.CurView"
+             xmlns:i18n="clr-namespace:PluralsightPractice.Localization.Helpers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:local="clr-namespace:PluralsightPractice.Localization.Views"
+             ios:Page.UseSafeArea="True">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="AppTitle" Text="{i18n:Translate AppTitle}" HorizontalTextAlignment="Center" />
+
+            <Picker 
+                x:Name="curpicker" 
+                Title="{i18n:Translate SelectCurrencyPrompt}" 
+                ItemsSource="{Binding CurList}" 
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndex="{Binding SelectedCurrencyIndex}"
+                SelectedItem="{Binding SelectedCurrency}"/>
+
+            <Entry
+                Placeholder="{i18n:Translate CurrencyValuePrompt}"
+                Text="{Binding CurValue}"
+                x:Name="CurValue"
+                HorizontalOptions="FillAndExpand"
+                MaxLength="8"
+                Keyboard="Numeric"/>
+
+            <ListView x:Name="CurData"
+                    CachingStrategy="RecycleElement"
+                    ItemsSource="{Binding CurrencyData}" 
+                    IsPullToRefreshEnabled="True"
+	   				SeparatorVisibility="None"
+					BackgroundColor="{DynamicResource CurListColor}"
+					HasUnevenRows="false"
+					RowHeight="120">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:CurViewCell/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
