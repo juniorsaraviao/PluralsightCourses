@@ -1,8 +1,5 @@
-﻿using PluralsightPractice.AbsoluteAndRelative;
-using PluralsightPractice.Architecting;
+﻿using PluralsightPractice.Architecting;
 using PluralsightPractice.Localization.Views;
-using PluralsightPractice.NativeFeatures;
-using PluralsightPractice.Navigation;
 using System;
 using Xamarin.Forms;
 
