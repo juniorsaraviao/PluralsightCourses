@@ -17,7 +17,7 @@ namespace PluralsightPractice
 
          //MainPage = new NavigationPage(new PicturePage());
          //ViewModelLocator.Register<Architecting.ViewModel.AboutViewModel>();
-         MainPage = new CurView();
+         MainPage = new MainPage();
       }
 
       public static void Register<TInterface, TImplementation>()
@@ -35,7 +35,7 @@ namespace PluralsightPractice
 
       protected async override void OnStart()
       {
-         await ((CurView)MainPage).RefreshData();
+         //await ((CurView)MainPage).RefreshData();
       }
 
       protected override void OnSleep()
