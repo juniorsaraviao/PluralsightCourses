@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PluralsightPractice.Controls"
-             x:Class="PluralsightPractice.MainPage">
+             x:Class="PluralsightPractice.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
         <ScrollView>
             <StackLayout>
                 <controls:MyEntry HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button Text="Take a picture!" Clicked="Button_Clicked"/>
                 <Frame BackgroundColor="Red" 
                    CornerRadius="50" 
                    HasShadow="True" 

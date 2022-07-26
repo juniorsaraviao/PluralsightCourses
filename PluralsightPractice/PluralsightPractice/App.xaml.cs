@@ -17,7 +17,7 @@ namespace PluralsightPractice
 
          //MainPage = new NavigationPage(new PicturePage());
          //ViewModelLocator.Register<Architecting.ViewModel.AboutViewModel>();
-         MainPage = new MainPage();
+         MainPage = new NavigationPage(new MainPage());
       }
 
       public static void Register<TInterface, TImplementation>()

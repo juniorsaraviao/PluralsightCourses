@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using PluralsightPractice.Controls;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace PluralsightPractice
 {
@@ -7,6 +9,15 @@ namespace PluralsightPractice
       public MainPage()
       {
          InitializeComponent();
+         Device.BeginInvokeOnMainThread(async () =>
+         {
+            var status = await Permissions.RequestAsync<Permissions.Camera>();
+         });
+      }
+
+      private async void Button_Clicked(object sender, System.EventArgs e)
+      {
+         await Navigation.PushAsync(new CameraPage());
       }
    }
 }
