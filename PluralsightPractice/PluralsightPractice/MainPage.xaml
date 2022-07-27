@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:PluralsightPractice.Controls"
+             xmlns:controls="clr-namespace:PluralsightPractice.Controls" 
+             xmlns:effects="clr-namespace:PluralsightPractice.Effects"
              x:Class="PluralsightPractice.MainPage"
              NavigationPage.HasNavigationBar="False">
 
@@ -10,6 +11,11 @@
             <StackLayout>
                 <controls:MyEntry HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Button Text="Take a picture!" Clicked="Button_Clicked"/>
+                <Entry Text="Effect attached to an Entry...">
+                    <Entry.Effects>
+                        <effects:FocusEffect/>
+                    </Entry.Effects>
+                </Entry>
                 <Frame BackgroundColor="Red" 
                    CornerRadius="50" 
                    HasShadow="True" 
