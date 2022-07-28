@@ -16,6 +16,11 @@
                         <effects:FocusEffect/>
                     </Entry.Effects>
                 </Entry>
+                <Label Text="Label Shadow Effect">
+                    <Label.Effects>
+                        <effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5" Color="LightCoral"/>
+                    </Label.Effects>
+                </Label>
                 <Frame BackgroundColor="Red" 
                    CornerRadius="50" 
                    HasShadow="True" 
