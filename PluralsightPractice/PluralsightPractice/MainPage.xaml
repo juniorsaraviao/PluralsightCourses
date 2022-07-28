@@ -21,6 +21,16 @@
                         <effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5" Color="LightCoral"/>
                     </Label.Effects>
                 </Label>
+
+                <Label Text="Label Shadow Effect" effects:ShadowEffectParameters.HasShadow="True" effects:ShadowEffectParameters.Radius="5"
+                       effects:ShadowEffectParameters.DistanceX="5" effects:ShadowEffectParameters.DistanceY="5">
+                    <effects:ShadowEffectParameters.Color>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="LightBlue" />
+                            <On Platform="Android" Value="Orange" />
+                        </OnPlatform>
+                    </effects:ShadowEffectParameters.Color>
+                </Label>
                 <Frame BackgroundColor="Red" 
                    CornerRadius="50" 
                    HasShadow="True" 
